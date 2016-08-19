@@ -1,0 +1,28 @@
+<div ng-controller='showTopicController'>
+
+    <button class='logout' ng-click='logout()'>Logout</button>
+    <br>
+
+    <div>
+        <h5><a href='#/dashboard'>Home</a>  | <a href='#/answer/{{oneTopic._id}}'> Answer this Question</a>
+            <br><br>
+
+        <h3><b>Question: </b></h3><h4>{{oneTopic.title}}</h4> <br>
+        <h3><b>Description: </b></h3><h4>{{oneTopic.description}}</h4> <br>
+        <div ng-repeat="answer in oneTopic._answers | orderBy:'-likes'">
+            <h4 class='name'>{{answer._user.name}}:
+            <div class='likers'>{{answer.likes}} <button ng-click='like(answer._id)'> Like!</button></div></h4>
+
+            <p><b>{{answer.message}}</b></p>
+            <p>{{answer.supporting}}</p>
+
+            <hr>
+        </div>
+
+
+    </div>
+
+
+
+
+</div>

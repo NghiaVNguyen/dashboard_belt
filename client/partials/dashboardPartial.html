@@ -1,0 +1,30 @@
+<div ng-controller='dashboardController'>
+
+
+    <button class='logout' ng-click='logout()'>Logout</button>
+    <br>
+    <h1>Hi, {{user.session.name}}!</h1>
+    <br><br>
+
+    <a href='#/topic'>Add a new Question</a>
+
+    <div class='table'  >
+        <p class='searchCust'> Search: <input type='text' value='search name...' ng-model='filter_name'></p>
+        <table>
+            <tr>
+                <th>Question</th>
+                <th>Answers</th>
+                <th>Action</th>
+            </tr>
+            <tr ng-repeat="topic in topics | filter: filter_name">
+                <td>{{topic.title}}</td>
+                <td>{{topic._answers.length}}</td>
+                <td><a href='#/showTopic/{{topic._id}}'>Show</a> | <a href='#/answer/{{topic._id}}'>Answer</a></td>
+
+            </tr>
+        </table>
+    </div>
+
+
+
+</div>

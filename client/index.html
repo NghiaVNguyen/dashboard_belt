@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+    <head>
+        <meta charset="utf-8">
+        <title>Belt Exam</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css'>
+        <!-- <link rel='stylesheet' href='style.css'> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+        <script src='routeProvider.js'></script>
+
+        <script src='./assets/userController.js'></script>
+        <script src='./assets/dashboardController.js'></script>
+        <script src='./assets/topicController.js'></script>
+        <script src='./assets/answerController.js'></script>
+        <script src='./assets/showTopicController.js'></script>
+        <script src='./services/userFactory.js'></script>
+        <script src='./services/dashboardFactory.js'></script>
+        <script src='./services/topicFactory.js'></script>
+
+        <script>
+            function goBack() {
+            window.history.back();
+            }
+        </script>
+        <style>
+            #mainBody{
+                padding-left: 30px;
+            }
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 60%;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+            p.searchCust {
+                margin-left: 510px;
+                margin-bottom: 20px;
+            }
+            button.logout {
+                 background:none!important;
+                 border:none;
+                 font-color:blue;
+                 padding:0!important;
+                 font: inherit;
+                 /*border is optional*/
+                 border-bottom:1px solid #444;
+                 cursor: pointer;
+                 margin-left: 800px;
+            }
+            div.likers {
+                margin-left: 500px;
+                display: inline-block;
+            }
+            div.name {
+                display: inline-block;
+            }
+            form.answerForm {
+                margin-left: 200px;
+            }
+            h3.postAnsLabel {
+                vertical-align: top;
+            }
+            div.answerButton {
+                margin-left: 180px;
+            }
+        </style>
+    </head>
+    <body id='mainBody'>
+        <h1> Belt Exam</h1>
+        <div ng-view="">
+        </div>
+    </body>
+</html>
